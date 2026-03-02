@@ -225,7 +225,7 @@
       -webkit-text-fill-color: transparent
     }
 
-    #rotating-word {
+    .rotating-word {
       display: inline-block;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     }
@@ -1106,13 +1106,13 @@
             <div class="br-m"></div>
             <span class="headline-blue">řešení</span>
             <div class="br-d"></div>
-            <span>pro <span id="rotating-word">značky</span>,</span>
+            <span>pro <span class="rotating-word">značky</span>,</span>
             <div class="br-m"></div>
             <span>které chtějí růst</span>
           </span>
           <span class="h-mobile">
             <span class="headline-blue">Kompletní digitální řešení</span><br>
-            pro značky/firmy, které chtějí růst
+            pro <span class="rotating-word">značky</span>, které chtějí růst
           </span>
         </h1>
         <div class="hero-collage">
@@ -1500,18 +1500,22 @@
     // Rotating words in hero
     const words = ["firmy", "značky"];
     let i = 0;
-    const el = document.getElementById('rotating-word');
-    if (el) {
+    const rotatingEls = document.querySelectorAll('.rotating-word');
+    if (rotatingEls.length) {
       setInterval(() => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(-14px)';
+        rotatingEls.forEach((el) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(-14px)';
+        });
         setTimeout(() => {
           i = (i + 1) % words.length;
-          el.textContent = words[i];
-          el.style.transform = 'translateY(14px)';
-          requestAnimationFrame(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
+          rotatingEls.forEach((el) => {
+            el.textContent = words[i];
+            el.style.transform = 'translateY(14px)';
+            requestAnimationFrame(() => {
+              el.style.opacity = '1';
+              el.style.transform = 'translateY(0)';
+            });
           });
         }, 180);
       }, 3000);
