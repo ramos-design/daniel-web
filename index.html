@@ -3,86 +3,58 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Dan Studio — Portfolio & služby</title>
-  <meta name="description" content="Weby, aplikace, marketing, design a tiskové služby. Moderní portfolio styl."/>
+  <title>Dan Studio | Digitál + design + tisk</title>
+  <meta name="description" content="Kompletní služby: weby, aplikace, marketing, design a tisk. Moderní layout inspirovaný referencí."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#f8f6f4;
-      --paper:#ffffff;
-      --ink:#0b0909;
-      --muted:#6a5f5d;
-      --line:#e7dfdc;
-      --accent:#a85e48;
-      --accent-2:#ce8e74;
-      --chip:#f4ece8;
-      --r:22px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:1180px;margin:0 auto;padding:18px}
+    :root{--bg:#f6f7fb;--ink:#111321;--muted:#5e667f;--card:#fff;--line:#e3e7f2;--primary:#5b7cfa;--primary-2:#7b5cff;--mint:#14c8a8;--radius:20px}
+    *{box-sizing:border-box} html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 80% -10%,#dce5ff 0%,#f6f7fb 45%);color:var(--ink);font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:18px}
 
     .nav{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px;position:sticky;top:10px;z-index:30}
-    .brand{font:700 12px/1 Space Grotesk,Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase}
-    .menu{display:flex;gap:14px;color:var(--muted);font-size:14px}
+    .brand{font:700 12px/1 Space Grotesk,Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase}.menu{display:flex;gap:14px;color:var(--muted);font-size:14px}
 
+    /* reference-like composition */
     .hero{padding:44px 0 24px;display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
-    .hero-left{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px}
-    .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:var(--chip);color:#7d4a3c;border:1px solid #e5d4cc;padding:7px 10px;border-radius:999px;font-weight:700}
+    .hero-left{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;position:relative;overflow:hidden}
+    .hero-left:after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--primary) 0%,transparent 70%);opacity:.14}
+    .tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:#eef2ff;color:#31407d;border:1px solid #dbe4ff;padding:7px 10px;border-radius:999px;font-weight:700}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--mint)}
     h1{font-family:Space Grotesk,Manrope,sans-serif;font-size:clamp(34px,6vw,74px);line-height:.92;letter-spacing:-.03em;margin:14px 0 0;max-width:720px}
-    .lead{margin:16px 0 0;max-width:620px;font-size:18px;line-height:1.55;color:#5f5451}
+    .lead{margin:16px 0 0;max-width:620px;font-size:18px;line-height:1.55;color:#4c5674}
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-    .btn{padding:12px 16px;border-radius:12px;font-weight:700;font-size:14px;border:1px solid transparent}
-    .btn.primary{background:linear-gradient(120deg,var(--accent),var(--accent-2));color:#fff}
-    .btn.secondary{background:#fff;border-color:#d8c8c1;color:#5a3930}
+    .btn{padding:12px 16px;border-radius:12px;font-weight:700;font-size:14px;border:1px solid transparent}.btn.primary{background:linear-gradient(120deg,var(--primary),var(--primary-2));color:#fff}.btn.secondary{background:#fff;border-color:#cfd6ec;color:#2a345f}
 
     .hero-right{display:grid;gap:12px}
-    .visual{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden;min-height:420px}
-    .visual img{width:100%;height:100%;object-fit:cover;object-position:top center}
-    .quick{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .q{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px}
-    .q b{display:block;font-size:13px;margin-bottom:4px}
-    .q p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+    .visual{border:1px solid var(--line);border-radius:26px;background:linear-gradient(150deg,#f1f5ff,#e9f9f5 55%,#ffffff);min-height:420px;position:relative;overflow:hidden}
+    .shape{position:absolute;border-radius:18px;border:1px solid #d4defc;background:#fff;box-shadow:0 8px 24px rgba(36,55,127,.08)}
+    .s1{left:20px;top:20px;width:44%;height:32%}.s2{right:20px;top:26%;width:36%;height:22%}.s3{left:26%;bottom:18px;width:48%;height:28%}
+    .shape:before{content:"";position:absolute;left:12px;right:12px;top:12px;height:8px;border-radius:999px;background:linear-gradient(90deg,#d9e3ff,#e8fef7)}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:12px}.q{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px}.q b{display:block;font-size:13px;margin-bottom:4px}.q p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
 
     section{padding:52px 0;border-bottom:1px solid var(--line)}
-    .head{display:grid;grid-template-columns:210px 1fr;gap:18px;align-items:start;margin-bottom:20px}
-    .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .head{display:grid;grid-template-columns:210px 1fr;gap:18px;align-items:start;margin-bottom:20px}.k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
     h2{margin:0;font-family:Space Grotesk,Manrope,sans-serif;font-size:clamp(28px,4vw,50px);line-height:1.02;letter-spacing:-.02em;max-width:860px}
 
     .services{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-    .card{border:1px solid var(--line);background:#fff;border-radius:16px;padding:16px}
-    .card h3{margin:0 0 8px;font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+    .card{border:1px solid var(--line);background:#fff;border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(36,55,127,.05)}
+    .card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
 
     .refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .thumb{aspect-ratio:16/10;border-radius:12px;overflow:hidden;border:1px solid #ddd3cf;margin-bottom:10px}
-    .thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(25%)}
-    .link{display:inline-block;margin-top:8px;color:#7d4a3c;border-bottom:1px solid #d2b5aa;font-size:14px}
+    .thumb{aspect-ratio:16/10;border-radius:12px;overflow:hidden;border:1px solid #d4dcf3;margin-bottom:10px}
+    .thumb img{width:100%;height:100%;object-fit:cover}.link{display:inline-block;margin-top:8px;color:#3d56b2;border-bottom:1px solid #90a0da;font-size:14px}
 
-    .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-    .step{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px}
-    .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#f1e6e2;color:#7a4638;font-weight:800;font-size:12px;margin-bottom:8px}
-    .step b{display:block;margin-bottom:5px}
-    .step p{margin:0;color:var(--muted);font-size:14px}
+    .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.step{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px}.n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#eef2ff;color:#33408b;font-weight:800;font-size:12px;margin-bottom:8px}.step b{display:block;margin-bottom:5px}.step p{margin:0;color:var(--muted);font-size:14px}
 
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    details{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px}
-    summary{cursor:pointer;font-weight:700}
-    details p{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:10px}details{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px}summary{cursor:pointer;font-weight:700}details p{margin:8px 0 0;color:var(--muted);font-size:14px}
 
-    .final{padding:56px 0 70px}
-    .box{border:1px solid #e0d2cc;background:linear-gradient(130deg,#fff,#f9f1ed);border-radius:22px;padding:20px}
-    .form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-    .full{grid-column:1/-1}
-    input,textarea,select{width:100%;padding:12px;border:1px solid #dccfc9;border-radius:12px;background:#fff;color:#2d2422;font:500 14px Manrope,sans-serif}
-    textarea{min-height:110px;resize:vertical}
+    .final{padding:56px 0 70px}.box{border:1px solid #cfdaff;background:linear-gradient(135deg,#eef2ff,#ecfff9);border-radius:22px;padding:20px}
+    .form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.full{grid-column:1/-1}input,textarea,select{width:100%;padding:12px;border:1px solid #cfd7ef;border-radius:12px;background:#fff;color:#2d2440;font:500 14px Manrope,sans-serif}textarea{min-height:110px;resize:vertical}
 
-    .reveal{opacity:0;transform:translateY(16px);transition:all .55s ease}
-    .reveal.show{opacity:1;transform:none}
-    footer{padding:14px 0 26px;color:#807370;font-size:13px}
+    .reveal{opacity:0;transform:translateY(16px);transition:all .55s ease}.reveal.show{opacity:1;transform:none}
+    footer{padding:14px 0 26px;color:#6c7390;font-size:13px}
 
     @media (max-width:1100px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}.refs{grid-template-columns:1fr}.hero{grid-template-columns:1fr}}
     @media (max-width:860px){.menu{display:none}.head{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.faq{grid-template-columns:1fr}.form{grid-template-columns:1fr}.quick{grid-template-columns:1fr}}
@@ -91,46 +63,24 @@
 </head>
 <body>
   <div class="wrap">
-    <nav class="nav reveal">
-      <div class="brand">Dan Studio</div>
-      <div class="menu"><a href="#sluzby">Služby</a><a href="#reference">Reference</a><a href="#proces">Proces</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a></div>
-    </nav>
+    <nav class="nav reveal"><div class="brand">Dan Studio</div><div class="menu"><a href="#sluzby">Služby</a><a href="#reference">Reference</a><a href="#proces">Proces</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a></div></nav>
 
     <header class="hero reveal">
       <div class="hero-left">
-        <span class="tag">Portfolio layout v2</span>
+        <span class="tag"><span class="dot"></span> Layout inspirovaný referencí</span>
         <h1>Digitální růst, který je vidět. Online i offline.</h1>
         <p class="lead">Pomáhám firmám růst díky webům, aplikacím, marketingu, designu a tisku, které fungují jako jeden celek.</p>
         <div class="cta"><a class="btn primary" href="#kontakt">Nezávazná konzultace</a><a class="btn secondary" href="#reference">Zobrazit reference</a></div>
       </div>
       <aside class="hero-right">
-        <div class="visual"><img src="https://cdn.dribbble.com/userupload/46499690/file/fe20925fbe0d05f7d45f70470540992e.png?resize=640x3973&vertical=center" alt="Reference visual"/></div>
-        <div class="quick">
-          <div class="q"><b>Web + aplikace</b><p>Rychlá exekuce, jasná struktura, měřitelný výsledek.</p></div>
-          <div class="q"><b>Marketing + design</b><p>Konzistentní značka napříč online i offline.</p></div>
-        </div>
+        <div class="visual"><div class="shape s1"></div><div class="shape s2"></div><div class="shape s3"></div></div>
+        <div class="quick"><div class="q"><b>Web + aplikace</b><p>Rychlá exekuce, jasná struktura, měřitelný výsledek.</p></div><div class="q"><b>Marketing + design</b><p>Konzistentní značka napříč online i offline.</p></div></div>
       </aside>
     </header>
 
-    <section id="sluzby" class="reveal">
-      <div class="head"><div class="k">[Služby]</div><h2>Pět služeb, jedna strategie: růst značky a více relevantních poptávek.</h2></div>
-      <div class="services">
-        <article class="card"><h3>Webové stránky</h3><p>Navrhnu a postavím web, který je rychlý, přehledný a konverzní. Od struktury přes design po nasazení.</p></article>
-        <article class="card"><h3>Vývoj aplikací</h3><p>Tvořím webové aplikace, které zjednoduší procesy a šetří čas týmu i klientům.</p></article>
-        <article class="card"><h3>Marketing</h3><p>Nastavím strategii a obsah tak, aby značka přitahovala správné publikum a měnila návštěvy v poptávky.</p></article>
-        <article class="card"><h3>Design</h3><p>Vizuální identita a kreativa, které zvyšují důvěru a odlišují vás od konkurence.</p></article>
-        <article class="card"><h3>Tiskařské služby</h3><p>Od návrhu po hotový tisk — letáky, vizitky, bannery, samolepky i další produkce.</p></article>
-      </div>
-    </section>
+    <section id="sluzby" class="reveal"><div class="head"><div class="k">[Služby]</div><h2>Pět služeb, jedna strategie: růst značky a více relevantních poptávek.</h2></div><div class="services"><article class="card"><h3>Webové stránky</h3><p>Navrhnu a postavím web, který je rychlý, přehledný a konverzní. Od struktury přes design po nasazení.</p></article><article class="card"><h3>Vývoj aplikací</h3><p>Tvořím webové aplikace, které zjednoduší procesy a šetří čas týmu i klientům.</p></article><article class="card"><h3>Marketing</h3><p>Nastavím strategii a obsah tak, aby značka přitahovala správné publikum a měnila návštěvy v poptávky.</p></article><article class="card"><h3>Design</h3><p>Vizuální identita a kreativa, které zvyšují důvěru a odlišují vás od konkurence.</p></article><article class="card"><h3>Tiskařské služby</h3><p>Od návrhu po hotový tisk — letáky, vizitky, bannery, samolepky i další produkce.</p></article></div></section>
 
-    <section id="reference" class="reveal">
-      <div class="head"><div class="k">[Reference]</div><h2>Reálné realizace a konkrétní výstupy</h2></div>
-      <div class="refs">
-        <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=80" alt="Vrakfest"></div><h3>Vrakfest</h3><p>Vytvořena kompletní webová stránka, vytvoření databáze a práce s live daty, plus vytvoření aplikace pro jezdce, diváky a organizaci Vrakfestu.</p><a class="link" href="https://www.vrakfest.cz" target="_blank" rel="noopener">www.vrakfest.cz</a></article>
-        <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Hibrace"></div><h3>Hibrace</h3><p>Vytvořena kompletní webová stránka včetně vytvoření rezervačního formuláře.</p><a class="link" href="https://hibrace.cz" target="_blank" rel="noopener">hibrace.cz</a></article>
-        <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Fišer & Partners"></div><h3>Fišer & Partners</h3><p>Vytvořena kompletní webová stránka včetně napojení na realitní portál Urbium.</p><a class="link" href="https://fiserpartners.cz" target="_blank" rel="noopener">fiserpartners.cz</a></article>
-      </div>
-    </section>
+    <section id="reference" class="reveal"><div class="head"><div class="k">[Reference]</div><h2>Reálné realizace a konkrétní výstupy</h2></div><div class="refs"><article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=80" alt="Vrakfest"></div><h3>Vrakfest</h3><p>Vytvořena kompletní webová stránka, vytvoření databáze a práce s live daty, plus vytvoření aplikace pro jezdce, diváky a organizaci Vrakfestu.</p><a class="link" href="https://www.vrakfest.cz" target="_blank" rel="noopener">www.vrakfest.cz</a></article><article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Hibrace"></div><h3>Hibrace</h3><p>Vytvořena kompletní webová stránka včetně vytvoření rezervačního formuláře.</p><a class="link" href="https://hibrace.cz" target="_blank" rel="noopener">hibrace.cz</a></article><article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Fišer & Partners"></div><h3>Fišer & Partners</h3><p>Vytvořena kompletní webová stránka včetně napojení na realitní portál Urbium.</p><a class="link" href="https://fiserpartners.cz" target="_blank" rel="noopener">fiserpartners.cz</a></article></div></section>
 
     <section id="proces" class="reveal"><div class="head"><div class="k">[Proces]</div><h2>Jasná cesta od zadání po výsledek.</h2></div><div class="process"><article class="step"><div class="n">01</div><b>Brief</b><p>Cíle, priority, rozpočet, časový rámec.</p></article><article class="step"><div class="n">02</div><b>Návrh řešení</b><p>Struktura, UX, scope a plán realizace.</p></article><article class="step"><div class="n">03</div><b>Realizace</b><p>Design, vývoj, obsah, integrace a testování.</p></article><article class="step"><div class="n">04</div><b>Spuštění & růst</b><p>Nasazení, měření, iterace a zlepšování výkonu.</p></article></div></section>
 
@@ -138,7 +88,7 @@
 
     <section id="kontakt" class="final reveal"><div class="box"><div class="k">[Kontakt]</div><h2 style="margin:0 0 10px">Připravený posunout značku na další úroveň?</h2><p style="margin:0;color:var(--muted);max-width:760px">Napiš krátce, co potřebuješ. Vrátím se ti s konkrétním návrhem řešení a dalším krokem.</p><form class="form" onsubmit="event.preventDefault(); alert('Děkuji, poptávka dorazila. Odpovím vám do 24 hodin.');"><input type="text" placeholder="Vaše jméno" required><input type="email" placeholder="E-mail pro odpověď" required><input type="tel" placeholder="Telefon (volitelné)"><select><option>Co potřebujete vytvořit?</option><option>Webová stránka</option><option>Webová aplikace</option><option>Marketing</option><option>Design</option><option>Tiskové služby</option></select><textarea class="full" placeholder="Popište stručně váš cíl"></textarea><button class="btn primary full" type="submit">Odeslat poptávku</button></form></div></section>
 
-    <footer>© <span id="y"></span> Dan Studio • Reference-aligned layout</footer>
+    <footer>© <span id="y"></span> Dan Studio • Reference-like layout, original palette restored</footer>
   </div>
   <script>document.getElementById('y').textContent=new Date().getFullYear();const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
 </body>
