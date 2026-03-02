@@ -6,32 +6,38 @@
   <title>Dan Studio — Weby, automatizace, marketing, tisk</title>
   <meta name="description" content="Tvořím weby, aplikace, automatizace, marketing, sociální sítě, design, animace i tisková řešení od vizitek po bannery." />
   <style>
-    :root{--bg:#0b1020;--card:#121a33;--muted:#9aa6cf;--text:#ecf0ff;--accent:#6ea8fe;--accent2:#7cf5c2}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#0a0f1f,#0f1730);color:var(--text);line-height:1.6}
-    .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    .hero{padding:64px 0 28px}
-    h1{font-size:clamp(32px,5vw,56px);line-height:1.1;margin:0 0 16px}
-    h2{font-size:clamp(24px,3vw,34px);margin:0 0 14px}
-    p.lead{font-size:clamp(18px,2vw,22px);color:#d7def8;max-width:760px}
-    .pill{display:inline-block;background:#1b274b;border:1px solid #2a3a68;border-radius:999px;padding:6px 12px;color:#bdd0ff;font-size:14px}
-    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:28px 0}
-    .card{background:var(--card);border:1px solid #25335e;border-radius:18px;padding:20px}
-    .card h3{margin-top:0}
-    ul{padding-left:18px;margin:8px 0}
-    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .btn{display:inline-block;padding:11px 16px;border-radius:12px;text-decoration:none;color:#061028;font-weight:700;background:var(--accent2)}
-    .btn.secondary{background:#223463;color:#dce6ff;border:1px solid #35508f}
+    :root{--bg:#0a0a0a;--surface:#111;--line:#2b2b2b;--text:#f4f4f4;--muted:#b8b8b8;--white:#fff}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    a{color:var(--white)}
+    .wrap{max-width:1140px;margin:0 auto;padding:24px}
+    .topline{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:18px}
+    .hero{padding:60px 0 26px;border-bottom:1px solid var(--line)}
+    h1{font-size:clamp(34px,5.2vw,78px);line-height:1.03;letter-spacing:-.02em;margin:0 0 18px;max-width:1000px}
+    .lead{font-size:clamp(18px,2.2vw,24px);max-width:860px;color:#d8d8d8;margin:0}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-block;padding:12px 16px;border:1px solid var(--white);background:var(--white);color:#000;text-decoration:none;font-weight:700;border-radius:999px}
+    .btn.secondary{background:transparent;color:var(--white);border-color:#7f7f7f}
+    section{padding:40px 0;border-bottom:1px solid var(--line)}
+    .label{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+    h2{font-size:clamp(24px,3.1vw,42px);line-height:1.12;letter-spacing:-.01em;margin:0 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .card h3{margin:0 0 10px;font-size:20px}
+    .card p{margin:0 0 10px;color:#ddd}
+    ul{margin:0;padding-left:18px;color:#ddd}
+    li+li{margin-top:4px}
+    .link{display:inline-block;margin-top:8px;font-size:14px;color:#fff;text-decoration:none;border-bottom:1px solid #888;padding-bottom:2px}
     .muted{color:var(--muted)}
-    section{padding:26px 0}
-    footer{padding:30px 0 50px;color:var(--muted);font-size:14px}
+    footer{padding:30px 0 40px;color:var(--muted);font-size:14px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <span class="pill">Hrubý návrh • verze 0.1</span>
-      <h1>Pomáhám firmám růst online i offline.</h1>
-      <p class="lead">Stavím <strong>weby, aplikace a automatizace</strong>, zároveň řeším <strong>marketing, sociální sítě, grafiku a animace</strong>. A když je potřeba, zajistím i <strong>kompletní tiskovou výrobu</strong>.</p>
+      <div class="topline">Dan Studio • Hrubý návrh • v0.2</div>
+      <h1>Stavím weby, aplikace a automatizace. K tomu marketing, design i tisk.</h1>
+      <p class="lead">Jedno místo pro online i offline růst: od webu a aplikace, přes sociální sítě a vizuál, až po kompletní tiskovou výrobu.</p>
       <div class="cta">
         <a class="btn" href="#kontakt">Nezávazná konzultace</a>
         <a class="btn secondary" href="#sluzby">Zobrazit služby</a>
@@ -39,79 +45,78 @@
     </header>
 
     <section id="sluzby">
-      <h2>Co pro tebe umím zajistit</h2>
+      <div class="label">[01 Služby]</div>
+      <h2>Tři pilíře, které spolu dávají výsledky.</h2>
       <div class="grid">
         <article class="card">
-          <h3>1) Weby, aplikace a automatizace</h3>
+          <h3>Weby, aplikace, automatizace</h3>
           <ul>
             <li>Firemní weby a landing pages</li>
             <li>Webové aplikace na míru</li>
-            <li>Automatizace procesů (např. n8n, integrace nástrojů)</li>
-            <li>Propojení dat, formulářů, CRM a notifikací</li>
+            <li>Automatizace procesů (n8n, integrace)</li>
+            <li>Propojení dat, CRM, formulářů a notifikací</li>
           </ul>
-          <p class="muted">Cíl: šetřit čas, zvyšovat konverze a mít systém, který pracuje za tebe.</p>
         </article>
 
         <article class="card">
-          <h3>2) Marketing, sociální sítě, design a animace</h3>
+          <h3>Marketing, sítě, design, animace</h3>
           <ul>
-            <li>Nastavení marketingové strategie</li>
-            <li>Správa sociálních sítí a obsahové plány</li>
-            <li>Grafický design (posty, bannery, brand materiály)</li>
-            <li>Animace a vizuály pro větší pozornost</li>
+            <li>Marketingová strategie a obsah</li>
+            <li>Správa sociálních sítí</li>
+            <li>Grafika pro kampaně i brand</li>
+            <li>Animace a vizuály pro vyšší pozornost</li>
           </ul>
-          <p class="muted">Cíl: přivést pozornost, budovat značku a proměňovat dosah na poptávky.</p>
         </article>
 
         <article class="card">
-          <h3>3) Tiskové služby a výroba</h3>
+          <h3>Tiskové služby</h3>
           <ul>
-            <li>Tisk letáků, vizitek a katalogů</li>
+            <li>Letáky, vizitky, katalogy</li>
             <li>Bannery, samolepky, etikety</li>
-            <li>Reklamní a promo tiskoviny</li>
-            <li>Poradenství k materiálu, formátu a výrobě</li>
+            <li>Promo tiskoviny</li>
+            <li>Doporučení materiálů i výroby</li>
           </ul>
-          <p class="muted">Cíl: mít vše od návrhu po finální tisk na jednom místě.</p>
         </article>
       </div>
     </section>
 
-    <section>
-      <h2>Jak spolupráce probíhá</h2>
+    <section id="workflow">
+      <div class="label">[02 Workflow]</div>
+      <h2>Jasný postup od zadání po výsledek.</h2>
       <div class="grid">
-        <div class="card"><strong>1. Krátký call</strong><br><span class="muted">Zadání, cíle, priority.</span></div>
-        <div class="card"><strong>2. Návrh řešení</strong><br><span class="muted">Obsah, scope, harmonogram.</span></div>
-        <div class="card"><strong>3. Realizace</strong><br><span class="muted">Tvorba, průběžné schvalování, ladění.</span></div>
-        <div class="card"><strong>4. Předání a růst</strong><br><span class="muted">Spuštění, měření a další optimalizace.</span></div>
+        <div class="card"><strong>1. Krátký call</strong><p class="muted">Cíle, priority, termín.</p></div>
+        <div class="card"><strong>2. Návrh řešení</strong><p class="muted">Scope, obsah, harmonogram.</p></div>
+        <div class="card"><strong>3. Realizace</strong><p class="muted">Tvorba + průběžné schválení.</p></div>
+        <div class="card"><strong>4. Spuštění a růst</strong><p class="muted">Předání, měření, další iterace.</p></div>
       </div>
     </section>
-
 
     <section id="projekty">
-      <h2>Vybrané projekty / klienti</h2>
+      <div class="label">[03 Klienti]</div>
+      <h2>Vybrané realizace</h2>
       <div class="grid">
         <article class="card">
           <h3>Vrakfest</h3>
           <p>Vytvořena kompletní webová stránka, vytvoření databáze a práce s live daty, plus vytvoření aplikace pro jezdce, diváky a organizaci Vrakfestu.</p>
-          <p><a class="btn secondary" href="https://www.vrakfest.cz" target="_blank" rel="noopener">www.vrakfest.cz</a></p>
+          <a class="link" href="https://www.vrakfest.cz" target="_blank" rel="noopener">www.vrakfest.cz</a>
         </article>
         <article class="card">
           <h3>Hibrace</h3>
           <p>Vytvořena kompletní webová stránka včetně rezervačního formuláře.</p>
-          <p><a class="btn secondary" href="https://hibrace.cz" target="_blank" rel="noopener">hibrace.cz</a></p>
+          <a class="link" href="https://hibrace.cz" target="_blank" rel="noopener">hibrace.cz</a>
         </article>
         <article class="card">
           <h3>Fišer & Partners</h3>
           <p>Vytvořena kompletní webová stránka včetně napojení na realitní portál Urbium.</p>
-          <p><a class="btn secondary" href="https://fiserpartners.cz" target="_blank" rel="noopener">fiserpartners.cz</a></p>
+          <a class="link" href="https://fiserpartners.cz" target="_blank" rel="noopener">fiserpartners.cz</a>
         </article>
       </div>
     </section>
 
     <section id="kontakt">
-      <h2>Kontakt / CTA blok (doplníme)</h2>
-      <p>Sem doplníme tvoje reálné kontakty, reference, logo klientů a finální nabídku.</p>
-      <p class="muted">Návrh textů je zatím hrubý draft pro rychlé odsouhlasení směru.</p>
+      <div class="label">[04 Kontakt]</div>
+      <h2>Připravený začít nový projekt?</h2>
+      <p>Doplníme kontaktní údaje, ideálně WhatsApp / email / formulář a preferovaný typ poptávky.</p>
     </section>
 
     <footer>
