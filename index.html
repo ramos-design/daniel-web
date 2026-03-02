@@ -4,125 +4,199 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dan Studio — Weby, automatizace, marketing, tisk</title>
-  <meta name="description" content="Tvořím weby, aplikace, automatizace, marketing, sociální sítě, design, animace i tisková řešení od vizitek po bannery." />
+  <meta name="description" content="Landing page: weby, aplikace, automatizace, marketing, design a tiskové služby." />
   <style>
-    :root{--bg:#0a0a0a;--surface:#111;--line:#2b2b2b;--text:#f4f4f4;--muted:#b8b8b8;--white:#fff}
+    :root{
+      --bg:#060606;
+      --surface:#0f0f0f;
+      --surface-2:#151515;
+      --line:#262626;
+      --text:#f5f5f5;
+      --muted:#a1a1a1;
+      --white:#fff;
+      --radius:18px;
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
-    a{color:var(--white)}
-    .wrap{max-width:1140px;margin:0 auto;padding:24px}
-    .topline{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:18px}
-    .hero{padding:60px 0 26px;border-bottom:1px solid var(--line)}
-    h1{font-size:clamp(34px,5.2vw,78px);line-height:1.03;letter-spacing:-.02em;margin:0 0 18px;max-width:1000px}
-    .lead{font-size:clamp(18px,2.2vw,24px);max-width:860px;color:#d8d8d8;margin:0}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-block;padding:12px 16px;border:1px solid var(--white);background:var(--white);color:#000;text-decoration:none;font-weight:700;border-radius:999px}
-    .btn.secondary{background:transparent;color:var(--white);border-color:#7f7f7f}
-    section{padding:40px 0;border-bottom:1px solid var(--line)}
-    .label{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
-    h2{font-size:clamp(24px,3.1vw,42px);line-height:1.12;letter-spacing:-.01em;margin:0 0 18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
-    .card h3{margin:0 0 10px;font-size:20px}
-    .card p{margin:0 0 10px;color:#ddd}
-    ul{margin:0;padding-left:18px;color:#ddd}
-    li+li{margin-top:4px}
-    .link{display:inline-block;margin-top:8px;font-size:14px;color:#fff;text-decoration:none;border-bottom:1px solid #888;padding-bottom:2px}
-    .muted{color:var(--muted)}
-    footer{padding:30px 0 40px;color:var(--muted);font-size:14px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1220px;margin:0 auto;padding:24px}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0 26px}
+    .brand{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:#d8d8d8}
+    .nav-links{display:flex;gap:18px;color:var(--muted);font-size:14px}
+
+    .hero{padding:42px 0 48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .hero h1{margin:0;max-width:1050px;font-size:clamp(40px,7vw,104px);line-height:.95;letter-spacing:-.03em}
+    .hero p{max-width:780px;color:#cfcfcf;font-size:clamp(17px,2vw,23px);line-height:1.5;margin:24px 0 0}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{padding:12px 18px;border-radius:999px;border:1px solid var(--white);font-weight:600;font-size:14px}
+    .btn.primary{background:var(--white);color:#000}
+    .btn.ghost{background:transparent;color:var(--white);border-color:#6a6a6a}
+
+    .section{padding:52px 0;border-bottom:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:start;margin-bottom:22px}
+    .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .section h2{font-size:clamp(28px,3.8vw,54px);line-height:1.02;letter-spacing:-.02em;margin:0;max-width:900px}
+
+    .cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-height:260px}
+    .card h3{margin:0 0 12px;font-size:24px;letter-spacing:-.01em}
+    .card ul{margin:0;padding-left:18px;color:#d4d4d4;line-height:1.55}
+
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+    .stat{border:1px solid var(--line);background:var(--surface-2);border-radius:14px;padding:18px}
+    .stat b{display:block;font-size:34px;letter-spacing:-.02em}
+    .stat span{color:var(--muted);font-size:14px}
+
+    .projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .project{border:1px solid var(--line);background:linear-gradient(180deg,#101010,#0c0c0c);border-radius:var(--radius);padding:22px}
+    .project h3{margin:0 0 10px;font-size:25px;letter-spacing:-.02em}
+    .project p{margin:0 0 14px;color:#d4d4d4;line-height:1.55}
+    .project a{display:inline-block;font-size:14px;color:#fff;border-bottom:1px solid #7b7b7b;padding-bottom:2px}
+
+    .workflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .step{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px}
+    .step .num{display:inline-block;border:1px solid #535353;color:#e6e6e6;border-radius:999px;padding:4px 10px;font-size:12px;margin-bottom:10px}
+    .step b{display:block;font-size:18px;margin-bottom:8px}
+    .step p{margin:0;color:var(--muted)}
+
+    .cta-final{padding:56px 0 72px}
+    .cta-box{border:1px solid var(--line);background:var(--surface);border-radius:22px;padding:34px}
+    .cta-box h2{font-size:clamp(30px,4vw,56px);line-height:1.02;letter-spacing:-.02em;margin:0 0 12px}
+    .cta-box p{max-width:760px;color:#cecece;margin:0 0 24px}
+
+    footer{padding:18px 0 40px;color:#8a8a8a;font-size:13px;border-top:1px solid var(--line)}
+
+    @media (max-width:980px){
+      .section-head{grid-template-columns:1fr;gap:8px}
+      .cards-3,.projects{grid-template-columns:1fr}
+      .workflow{grid-template-columns:1fr 1fr}
+      .stats{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .container{padding:18px}
+      .workflow,.stats{grid-template-columns:1fr}
+      .hero h1{line-height:1}
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">Dan Studio</div>
+      <div class="nav-links">
+        <a href="#sluzby">Služby</a>
+        <a href="#projekty">Klienti</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </nav>
+
     <header class="hero">
-      <div class="topline">Dan Studio • Hrubý návrh • v0.2</div>
-      <h1>Stavím weby, aplikace a automatizace. K tomu marketing, design i tisk.</h1>
-      <p class="lead">Jedno místo pro online i offline růst: od webu a aplikace, přes sociální sítě a vizuál, až po kompletní tiskovou výrobu.</p>
-      <div class="cta">
-        <a class="btn" href="#kontakt">Nezávazná konzultace</a>
-        <a class="btn secondary" href="#sluzby">Zobrazit služby</a>
+      <div class="eyebrow">[01 Intro]</div>
+      <h1>Not just služby.<br>Dodávám funkční řešení, která vydělávají.</h1>
+      <p>Weby, aplikace, automatizace, marketing, sociální sítě, grafika, animace i tisková výroba. Vše propojené tak, aby to fungovalo jako jeden celek.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#kontakt">Nezávazná konzultace</a>
+        <a class="btn ghost" href="#projekty">Zobrazit realizace</a>
       </div>
     </header>
 
-    <section id="sluzby">
-      <div class="label">[01 Služby]</div>
-      <h2>Tři pilíře, které spolu dávají výsledky.</h2>
-      <div class="grid">
+    <section class="section" id="sluzby">
+      <div class="section-head">
+        <div class="kicker">[02 Services]</div>
+        <h2>Tři oblasti, které pokryjí tvůj online i offline růst.</h2>
+      </div>
+      <div class="cards-3">
         <article class="card">
-          <h3>Weby, aplikace, automatizace</h3>
+          <h3>Weby & Aplikace</h3>
           <ul>
-            <li>Firemní weby a landing pages</li>
+            <li>Landing pages a firemní weby</li>
             <li>Webové aplikace na míru</li>
-            <li>Automatizace procesů (n8n, integrace)</li>
-            <li>Propojení dat, CRM, formulářů a notifikací</li>
+            <li>Databázové řešení a live data</li>
+            <li>Automatizace procesů (n8n/integrace)</li>
           </ul>
         </article>
-
         <article class="card">
-          <h3>Marketing, sítě, design, animace</h3>
+          <h3>Marketing & Design</h3>
           <ul>
-            <li>Marketingová strategie a obsah</li>
+            <li>Marketingová strategie</li>
             <li>Správa sociálních sítí</li>
-            <li>Grafika pro kampaně i brand</li>
-            <li>Animace a vizuály pro vyšší pozornost</li>
+            <li>Grafický design kampaní</li>
+            <li>Animace a vizuální obsah</li>
           </ul>
         </article>
-
         <article class="card">
-          <h3>Tiskové služby</h3>
+          <h3>Tisk & Produkce</h3>
           <ul>
             <li>Letáky, vizitky, katalogy</li>
             <li>Bannery, samolepky, etikety</li>
-            <li>Promo tiskoviny</li>
-            <li>Doporučení materiálů i výroby</li>
+            <li>Promo tiskoviny na míru</li>
+            <li>Kompletní realizace od návrhu po tisk</li>
           </ul>
         </article>
       </div>
-    </section>
-
-    <section id="workflow">
-      <div class="label">[02 Workflow]</div>
-      <h2>Jasný postup od zadání po výsledek.</h2>
-      <div class="grid">
-        <div class="card"><strong>1. Krátký call</strong><p class="muted">Cíle, priority, termín.</p></div>
-        <div class="card"><strong>2. Návrh řešení</strong><p class="muted">Scope, obsah, harmonogram.</p></div>
-        <div class="card"><strong>3. Realizace</strong><p class="muted">Tvorba + průběžné schválení.</p></div>
-        <div class="card"><strong>4. Spuštění a růst</strong><p class="muted">Předání, měření, další iterace.</p></div>
+      <div class="stats">
+        <div class="stat"><b>3</b><span>hlavní pilíře služeb</span></div>
+        <div class="stat"><b>360°</b><span>online + offline řešení</span></div>
+        <div class="stat"><b>End‑to‑End</b><span>od návrhu po realizaci</span></div>
+        <div class="stat"><b>Na míru</b><span>podle cíle a rozpočtu</span></div>
       </div>
     </section>
 
-    <section id="projekty">
-      <div class="label">[03 Klienti]</div>
-      <h2>Vybrané realizace</h2>
-      <div class="grid">
-        <article class="card">
+    <section class="section" id="projekty">
+      <div class="section-head">
+        <div class="kicker">[03 Clients]</div>
+        <h2>Vybrané realizace</h2>
+      </div>
+      <div class="projects">
+        <article class="project">
           <h3>Vrakfest</h3>
           <p>Vytvořena kompletní webová stránka, vytvoření databáze a práce s live daty, plus vytvoření aplikace pro jezdce, diváky a organizaci Vrakfestu.</p>
-          <a class="link" href="https://www.vrakfest.cz" target="_blank" rel="noopener">www.vrakfest.cz</a>
+          <a href="https://www.vrakfest.cz" target="_blank" rel="noopener">www.vrakfest.cz</a>
         </article>
-        <article class="card">
+        <article class="project">
           <h3>Hibrace</h3>
-          <p>Vytvořena kompletní webová stránka včetně rezervačního formuláře.</p>
-          <a class="link" href="https://hibrace.cz" target="_blank" rel="noopener">hibrace.cz</a>
+          <p>Vytvořena kompletní webová stránka včetně vytvoření rezervačního formuláře.</p>
+          <a href="https://hibrace.cz" target="_blank" rel="noopener">hibrace.cz</a>
         </article>
-        <article class="card">
+        <article class="project">
           <h3>Fišer & Partners</h3>
           <p>Vytvořena kompletní webová stránka včetně napojení na realitní portál Urbium.</p>
-          <a class="link" href="https://fiserpartners.cz" target="_blank" rel="noopener">fiserpartners.cz</a>
+          <a href="https://fiserpartners.cz" target="_blank" rel="noopener">fiserpartners.cz</a>
         </article>
       </div>
     </section>
 
-    <section id="kontakt">
-      <div class="label">[04 Kontakt]</div>
-      <h2>Připravený začít nový projekt?</h2>
-      <p>Doplníme kontaktní údaje, ideálně WhatsApp / email / formulář a preferovaný typ poptávky.</p>
+    <section class="section" id="workflow">
+      <div class="section-head">
+        <div class="kicker">[04 Workflow]</div>
+        <h2>Bez chaosu. Jasný postup od briefu po výsledek.</h2>
+      </div>
+      <div class="workflow">
+        <div class="step"><span class="num">01</span><b>Brief</b><p>Cíle, očekávání, rozsah.</p></div>
+        <div class="step"><span class="num">02</span><b>Návrh</b><p>Koncept, struktura, priority.</p></div>
+        <div class="step"><span class="num">03</span><b>Realizace</b><p>Vývoj, obsah, schvalování.</p></div>
+        <div class="step"><span class="num">04</span><b>Spuštění</b><p>Nasazení a další optimalizace.</p></div>
+      </div>
+    </section>
+
+    <section class="cta-final" id="kontakt">
+      <div class="cta-box">
+        <div class="kicker">[05 Contact]</div>
+        <h2>Pojďme postavit něco, co má reálný dopad.</h2>
+        <p>Tady doplníme finální kontaktní údaje (telefon, email, formulář, sociální sítě). Teď je to připravené jako designově-contentový draft.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#">Domluvit konzultaci</a>
+          <a class="btn ghost" href="#">Poslat poptávku</a>
+        </div>
+      </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Dan Studio • Draft landing page
+      © <span id="y"></span> Dan Studio • GitHub Pages draft
     </footer>
   </div>
+
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
