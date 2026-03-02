@@ -29,7 +29,11 @@
     .brand{font:800 12px/1 Space Grotesk,Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#20253d}
     .menu{display:flex;gap:14px;font-size:14px;color:var(--muted)}
 
-    .hero{padding:66px 0 24px;display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .hero{padding:26px;display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+
+    .hero-variants{display:grid;gap:18px;padding:66px 0 24px;border-bottom:1px solid #e6eaf5}
+    .hero-b{grid-template-columns:1fr}
+
     .hero-main,.hero-side{background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
     .hero-main{padding:30px}
     .hero-side{padding:14px;display:grid;gap:10px}
@@ -101,22 +105,53 @@
       </div>
     </nav>
 
-    <header class="hero reveal">
-      <div class="hero-main">
-        <span class="badge">Nový vizuální směr</span>
-        <h1>Digitální růst, který je vidět. Online i offline.</h1>
-        <p class="lead">Pomáhám firmám růst díky webům, aplikacím, marketingu, designu a tisku, které fungují jako jeden celek.</p>
-        <div class="cta">
-          <a class="btn primary" href="#kontakt">Nezávazná konzultace</a>
-          <a class="btn secondary" href="#reference">Zobrazit reference</a>
+    <section class="hero-variants reveal">
+      <article class="hero hero-a">
+        <div class="hero-main">
+          <span class="badge">Hero varianta A • Split Premium</span>
+          <h1>Digitální růst, který je vidět. Online i offline.</h1>
+          <p class="lead">Pomáhám firmám růst díky webům, aplikacím, marketingu, designu a tisku, které fungují jako jeden celek.</p>
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Nezávazná konzultace</a>
+            <a class="btn secondary" href="#reference">Zobrazit reference</a>
+          </div>
         </div>
-      </div>
-      <aside class="hero-side">
-        <div class="mini"><b>Web + app</b><p>Rychlý, moderní, conversion-first základ.</p></div>
-        <div class="mini"><b>Marketing + design</b><p>Jasná komunikace, která přivádí relevantní poptávky.</p></div>
-        <div class="mini"><b>Tiskové služby</b><p>Od návrhu po realizaci v jednotném stylu značky.</p></div>
-      </aside>
-    </header>
+        <aside class="hero-side">
+          <div class="mini"><b>Web + app</b><p>Rychlý, moderní, conversion-first základ.</p></div>
+          <div class="mini"><b>Marketing + design</b><p>Jasná komunikace, která přivádí relevantní poptávky.</p></div>
+          <div class="mini"><b>Tiskové služby</b><p>Od návrhu po realizaci v jednotném stylu značky.</p></div>
+        </aside>
+      </article>
+
+      <article class="hero hero-b">
+        <div class="hero-main" style="grid-column:1/-1">
+          <span class="badge">Hero varianta B • Center Bold</span>
+          <h1 style="max-width:980px">Weby, aplikace a marketing v jednom systému pro růst značky.</h1>
+          <p class="lead" style="max-width:820px">Jeden partner, který propojí strategii, design, vývoj i tisk do jasného obchodního výsledku.</p>
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Začít projekt</a>
+            <a class="btn secondary" href="#sluzby">Projít služby</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero hero-c">
+        <div class="hero-main">
+          <span class="badge">Hero varianta C • Value + Proof</span>
+          <h1 style="max-width:760px">Méně dodavatelů. Více výsledků.</h1>
+          <p class="lead">Od webu a aplikace po marketing a tisk. Všechno sladěné tak, aby tvoje značka rostla rychleji a bez chaosu.</p>
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Chci nabídku</a>
+            <a class="btn secondary" href="#proces">Jak pracuji</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div class="mini"><b>+5 oblastí</b><p>Weby, aplikace, marketing, design, tisk.</p></div>
+          <div class="mini"><b>360° přístup</b><p>Online i offline řešení pod jednou střechou.</p></div>
+          <div class="mini"><b>Rychlý start</b><p>Jasný proces od briefu po spuštění.</p></div>
+        </aside>
+      </article>
+    </section>
 
     <section id="sluzby" class="reveal">
       <div class="head">
